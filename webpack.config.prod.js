@@ -13,6 +13,13 @@ module.exports = {
     filename: 'bundle.js',
     publicPath: ''
   },
+  resolve: {
+    extensions: ['', '.jsx', '.scss', '.js', '.json'],
+    modulesDirectories: [
+      'node_modules',
+      path.resolve(__dirname, './node_modules')
+    ]
+  },
   plugins: [
     new webpack.optimize.OccurrenceOrderPlugin(),
     new webpack.DefinePlugin({
@@ -31,6 +38,9 @@ module.exports = {
     new ExtractTextPlugin('react-toolbox.css', { allChunks: true })
   ],
   postcss: [autoprefixer],
+  toolbox: {
+    theme: path.join(__dirname, 'style/toolbox-theme.scss')
+  },
   module: {
     loaders: [{
       test: /\.js$/,
