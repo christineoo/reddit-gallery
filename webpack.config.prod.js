@@ -39,7 +39,7 @@ module.exports = {
   ],
   postcss: [autoprefixer],
   toolbox: {
-    theme: path.join(__dirname, 'style/toolbox-theme.scss')
+    theme: path.join(__dirname, 'src/style/toolbox-theme.scss')
   },
   module: {
     loaders: [{
