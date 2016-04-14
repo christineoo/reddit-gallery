@@ -6,7 +6,7 @@ export default class Posts extends Component {
     return (
       <List selectable ripple>
         {this.props.posts.map((post, i) =>
-          <ListItem key={i} caption={post.title} to={post.url}/>
+          <ListItem key={i} caption={post.title} to={post.url} leftIcon='remove' />
         )}
       </List>
     )

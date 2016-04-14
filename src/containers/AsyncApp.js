@@ -73,7 +73,7 @@ class AsyncApp extends Component {
             <Posts posts={posts} />
           </div>
         }
-        <Button label='Load More' accent onClick={this.loadMore}/>
+        <Button icon='add' label='Load More' accent onClick={this.loadMore}/>
       </div>
     )
   }
