@@ -3,6 +3,9 @@ var webpack = require('webpack');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const autoprefixer = require('autoprefixer');
+var devFlagPlugin = new webpack.DefinePlugin({
+  __DEV__: JSON.stringify(JSON.parse(process.env.DEBUG || 'false'))
+});
 
 module.exports = {
   devtool: 'eval',
@@ -28,7 +31,8 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: 'index.html'
     }),
-    new ExtractTextPlugin('react-toolbox.css', { allChunks: true })
+    new ExtractTextPlugin('react-toolbox.css', { allChunks: true }),
+    devFlagPlugin
   ],
   postcss: [autoprefixer],
   toolbox: {
