@@ -10,7 +10,8 @@ h1 {
 }
 
 .content {
-  padding: $appbar-height;
+  margin-top: $appbar-height;
+  padding: 2 * $unit;
 }
 
 .appbar {
