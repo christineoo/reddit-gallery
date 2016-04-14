@@ -5,7 +5,7 @@ export default class Header extends Component {
   render() {
     return (
       <AppBar fixed flat>
-        <a href="/home">Reddit Gallery</a>
+        <a href="/home">Reddit Feeds</a>
       </AppBar>
     )
   }
