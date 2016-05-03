@@ -3,6 +3,8 @@ import { connect } from 'react-redux'
 import { selectSubreddit, fetchPostsIfNeeded, invalidateSubreddit, fetchNextPagePosts } from '../actions'
 import Picker from '../components/Picker'
 import Posts from '../components/Posts'
+import Photos from '../components/Photos'
+import Spinner from '../components/Spinner'
 import {Button, IconButton} from 'react-toolbox/lib/button';
 import style from '../style/style.scss'
 
@@ -62,19 +64,19 @@ class AsyncApp extends Component {
             </a>
           }
         </p>
-        {isFetching && posts.length === 0 &&
-          <h4>Loading...</h4>
-        }
         {!isFetching && posts.length === 0 &&
           <h2>Empty.</h2>
         }
         {posts.length > 0 &&
           <div style={{ opacity: isFetching ? 0.5 : 1 }}>
-            <Posts posts={posts} />
+            <Photos posts={posts} />
           </div>
         }
         {!isFetching &&
           <Button icon='add' label='Load More' accent onClick={this.loadMore}/>
+        }
+        {isFetching &&
+          <Spinner />
         }
       </article>
     )
