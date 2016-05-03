@@ -46,7 +46,7 @@ class AsyncApp extends Component {
   render() {
     const { selectedSubreddit, posts, isFetching, lastUpdated, loadNextPage } = this.props
     return (
-      <div className={style.content}>
+      <article className={style.content}>
         <Picker value={selectedSubreddit}
                 onChange={this.handleChange}
                 options={[ 'reactjs', 'frontend' ]} />
@@ -73,8 +73,10 @@ class AsyncApp extends Component {
             <Posts posts={posts} />
           </div>
         }
-        <Button icon='add' label='Load More' accent onClick={this.loadMore}/>
-      </div>
+        {!isFetching &&
+          <Button icon='add' label='Load More' accent onClick={this.loadMore}/>
+        }
+      </article>
     )
   }
 }
