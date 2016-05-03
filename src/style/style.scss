@@ -10,8 +10,14 @@ h1 {
 }
 
 .content {
-  margin-top: $appbar-height;
   padding: 2 * $unit;
+  position: fixed;
+  top: $appbar-height;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  overflow-y: auto;
+  max-height: 100%;
 }
 
 .appbar {
