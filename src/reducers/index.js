@@ -4,7 +4,7 @@ import {
   REQUEST_POSTS, RECEIVE_POSTS
 } from '../actions'
 
-function selectedSubreddit(state = 'pics', action) {
+function selectedSubreddit(state = 'earthporn', action) {
   switch (action.type) {
     case SELECT_SUBREDDIT:
       return action.subreddit

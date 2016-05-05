@@ -51,7 +51,7 @@ class AsyncApp extends Component {
       <article className={style.content}>
         <Picker value={selectedSubreddit}
                 onChange={this.handleChange}
-                options={[ 'pics', 'facepalm', 'aww' ]} />
+                options={[ 'earthporn', 'waterporn', 'cityporn', 'foodporn' ]} />
         <p>
           {lastUpdated &&
             <span>
