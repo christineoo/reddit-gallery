@@ -48,10 +48,16 @@ class AsyncApp extends Component {
   render() {
     const { selectedSubreddit, posts, isFetching, lastUpdated, loadNextPage } = this.props
     return (
-      <article className={style.content}>
-        <Picker value={selectedSubreddit}
+      <div className={style.content}>
+        <div style={{ width: '200px' }}>
+            <Picker value={selectedSubreddit}
                 onChange={this.handleChange}
-                options={[ 'earthporn', 'waterporn', 'cityporn', 'foodporn' ]} />
+                options={[ {value: 'earthporn', label: 'Earth'},
+                           {value: 'waterporn', label: 'Water'},
+                           {value: 'cityporn', label: 'City'},
+                           {value: 'foodporn', label: 'Food'} ]}
+             />
+        </div>
         <p>
           {lastUpdated &&
             <span>
@@ -78,7 +84,7 @@ class AsyncApp extends Component {
         {isFetching &&
           <Spinner />
         }
-      </article>
+      </div>
     )
   }
 }

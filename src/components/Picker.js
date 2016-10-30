@@ -1,31 +1,29 @@
 import React, { Component, PropTypes } from 'react'
+import Dropdown from 'react-toolbox/lib/dropdown';
 
 export default class Picker extends Component {
 
   handleChange = (value) => {
-    this.setState({value: value});
+    this.props.onChange(value)
   };
 
   render() {
     const { value, onChange, options } = this.props
 
     return (
-      <span>
-        <select onChange={e => onChange(e.target.value)} value={value}>
-          {options.map(option => 
-            <option value={option} key={option}>
-              {option}
-            </option>)
-          }
-        </select>
-      </span>      
-    )
+      <Dropdown
+        label="Select a category"
+        auto
+        onChange={this.handleChange}
+        source={options}
+        value={value}
+      />)
   }
 }
 
 Picker.propTypes = {
   options: PropTypes.arrayOf(
-    PropTypes.string.isRequired
+    PropTypes.object.isRequired
   ).isRequired,
   value: PropTypes.string.isRequired,
   onChange: PropTypes.func.isRequired
