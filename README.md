@@ -1,4 +1,4 @@
-This project is a Reddit photo gallery web application that allows user to view images from predefined subreddit categories and it is build on top of [react-hot-boilerplate](https://github.com/gaearon/react-hot-boilerplate).
+This project is a Reddit photo gallery web application that allows user to view images from predefined subreddit categories and it is build on top of [react-hot-boilerplate](https://github.com/gaearon/react-hot-boilerplate). Please check out the live demo [here!](http://christineoo.github.io/reddit-gallery/)
 
 Other libraries are then included into it such as:
 
